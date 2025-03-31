@@ -1,4 +1,5 @@
 "use client";
+export const dynamic = "force-dynamic"; 
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -7,6 +8,15 @@ import Footer from "../dashboard/components/Footer";
 import { FiDownload } from "react-icons/fi";
 
 export default function SearchResults() {
+  return (
+    <Suspense fallback={<p className="text-center mt-10">Loading search results...</p>}>
+      <SearchResultsComponent />
+    </Suspense>
+  );
+}
+
+
+function SearchResultsComponent() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q");
 
