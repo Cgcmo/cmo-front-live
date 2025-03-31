@@ -30,7 +30,7 @@ const GalleryModal = ({ isOpen, setIsOpen, albumId, fetchPhotos, fetchAllStats }
     setLoading(true); 
 
     try {
-      const response = await fetch(`http://localhost:5000/upload-gallery/${albumId}`, {
+      const response = await fetch(`https://cmo-back-live.onrender.com/upload-gallery/${albumId}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ images: uploadedImages }),
