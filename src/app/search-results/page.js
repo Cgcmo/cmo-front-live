@@ -1,4 +1,5 @@
 // src/app/search-results/page.jsx
+"use client";
 import { Suspense } from "react";
 import Navbar from "../dashboard/components/Navbar";
 import Footer from "../dashboard/components/Footer";
