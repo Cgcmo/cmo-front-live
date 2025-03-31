@@ -26,7 +26,7 @@ export default function Navbar({ setShowGallery, setGalleryPhotos,fetchAlbums: f
   
   const fetchAlbums = async () => {
     try {
-      const response = await fetch("http://localhost:5000/albums");
+      const response = await fetch("https://cmo-back-live.onrender.com/albums");
       if (!response.ok) {
         throw new Error("Failed to fetch albums");
       }
@@ -39,19 +39,19 @@ export default function Navbar({ setShowGallery, setGalleryPhotos,fetchAlbums: f
   
   useEffect(() => {
     // Fetch Events
-    fetch("http://localhost:5000/get-events")
+    fetch("https://cmo-back-live.onrender.com/get-events")
       .then(res => res.json())
       .then(data => setEventList(data))
       .catch(err => console.error("Failed to fetch events:", err));
   
     // Fetch Categories (Departments)
-    fetch("http://localhost:5000/departments")
+    fetch("https://cmo-back-live.onrender.com/departments")
       .then(res => res.json())
       .then(data => setCategoryList(data.map(d => d.name)))  // extract only names
       .catch(err => console.error("Failed to fetch departments:", err));
   
     // Fetch Districts
-    fetch("http://localhost:5000/districts")
+    fetch("https://cmo-back-live.onrender.com/districts")
       .then(res => res.json())
       .then(data => setDistrictList(data.map(d => d.name)))
       .catch(err => console.error("Failed to fetch districts:", err));
@@ -59,7 +59,7 @@ export default function Navbar({ setShowGallery, setGalleryPhotos,fetchAlbums: f
   
 
   useEffect(() => {
-    fetch("http://localhost:5000/search-suggestions")
+    fetch("https://cmo-back-live.onrender.com/search-suggestions")
       .then(res => res.json())
       .then(data => {
         const combined = [
