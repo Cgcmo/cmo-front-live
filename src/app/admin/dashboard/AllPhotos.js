@@ -23,7 +23,7 @@ const AllPhotos = ({  albums, setAlbums, currentTab, fetchAllStats } ) => {
 
   const fetchAlbums = async () => {
     try {
-      const response = await fetch("http://localhost:5000/albums");
+      const response = await fetch("https://cmo-back-live.onrender.com/albums");
       if (!response.ok) {
         throw new Error("Failed to fetch albums");
       }
@@ -38,7 +38,7 @@ const AllPhotos = ({  albums, setAlbums, currentTab, fetchAllStats } ) => {
   const fetchPhotos = async (album) => {
   if (!album || !album._id) return;
   try {
-    const response = await fetch(`http://localhost:5000/photos/${album._id}`);
+    const response = await fetch(`https://cmo-back-live.onrender.com/photos/${album._id}`);
     if (!response.ok) throw new Error("Failed to fetch photos");
     const data = await response.json();
     console.log("📸 Fetched Photos:", data);
@@ -55,7 +55,7 @@ const AllPhotos = ({  albums, setAlbums, currentTab, fetchAllStats } ) => {
 
   const handleCreateAlbum = async (newAlbum) => {
     try {
-      const response = await fetch("http://localhost:5000/create-album", {
+      const response = await fetch("https://cmo-back-live.onrender.com/create-album", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newAlbum),
@@ -151,7 +151,7 @@ const handleDownloadAlbum = async (album) => {
   if (!album || !album._id) return;
 
   try {
-    const response = await fetch(`http://localhost:5000/photos/${album._id}`);
+    const response = await fetch(`https://cmo-back-live.onrender.com/photos/${album._id}`);
     if (!response.ok) throw new Error("Failed to fetch photos");
     const photos = await response.json();
 
@@ -191,7 +191,7 @@ const handleDownloadAlbum = async (album) => {
         } else if (item._id) {
             // ✅ Item is an album
             try {
-                const response = await fetch(`http://localhost:5000/photos/${item._id}`);
+                const response = await fetch(`https://cmo-back-live.onrender.com/photos/${item._id}`);
                 if (!response.ok) throw new Error("Failed to fetch photos");
                 const data = await response.json();
 
@@ -232,7 +232,7 @@ const handleDownloadAlbum = async (album) => {
               }
 
               const response = await fetch(
-                `http://localhost:5000/photo/${selectedAlbum._id}/${photo.photo_id}`,
+                `https://cmo-back-live.onrender.com/photo/${selectedAlbum._id}/${photo.photo_id}`,
                 { method: "DELETE" }
               );
 
@@ -243,7 +243,7 @@ const handleDownloadAlbum = async (album) => {
             await fetchPhotos(selectedAlbum); // ✅ Refresh album after deletion
           } else {
             // Deleting albums
-            const response = await fetch("http://localhost:5000/delete-albums", {
+            const response = await fetch("https://cmo-back-live.onrender.com/delete-albums", {
               method: "DELETE",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ albumIds: selectedItems.map((album) => album._id) }),
