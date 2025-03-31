@@ -42,7 +42,7 @@ function App() {
 
   const fetchAlbums = async () => {
     try {
-      const response = await fetch("http://localhost:5000/albums");
+      const response = await fetch("https://cmo-back-live.onrender.com/albums");
       if (!response.ok) {
         throw new Error("Failed to fetch albums");
       }
@@ -72,7 +72,7 @@ function App() {
         axios.get("http://127.0.0.1:5000/count-users"),
         axios.get("http://127.0.0.1:5000/count-albums"),
         axios.get("http://127.0.0.1:5000/count-photos"),
-        axios.get("http://localhost:5000/get-download-count"),
+        axios.get("https://cmo-back-live.onrender.com/get-download-count"),
       ]);
   
       const totalUsers = userRes.data.total_users;
@@ -97,7 +97,7 @@ function App() {
   useEffect(() => {
     const fetchDownloadCount = async () => {
       try {
-        const res = await fetch("http://localhost:5000/get-download-count");
+        const res = await fetch("https://cmo-back-live.onrender.com/get-download-count");
         const data = await res.json();
         const downloadCount = data.count || 0;
   
@@ -131,7 +131,7 @@ function App() {
   useEffect(() => {
     const fetchDownloadCount = async () => {
       try {
-        const res = await fetch("http://localhost:5000/get-download-count");
+        const res = await fetch("https://cmo-back-live.onrender.com/get-download-count");
         const data = await res.json();
         const downloadCount = data.count || 0;
 
