@@ -10,7 +10,7 @@ function CustomBarChart({ onPercentageChange }) {
   useEffect(() => {
     const fetchVisitorStats = async () => {
       try {
-        const response = await fetch("http://localhost:5000/visitor-stats");
+        const response = await fetch("https://cmo-back-live.onrender.com/visitor-stats");
         const data = await response.json();
 
         // Format data for recharts (x as day number or short name)
