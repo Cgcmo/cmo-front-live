@@ -4,7 +4,7 @@ import Navbar from "../dashboard/components/Navbar";
 import Footer from "../dashboard/components/Footer";
 import dynamic from "next/dynamic";
 
-const SearchResultsComponent = dynamic(() => import("../../components/SearchResultsComponent"), {
+const SearchResultsComponent = dynamic(() => import("./SearchResultsComponent"), {
   ssr: false,
 });
 
