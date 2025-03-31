@@ -83,7 +83,7 @@ export default function SearchResults() {
     return <p className="text-center mt-10 text-[#170645] font-semibold">Loading related photos...</p>;
 
   return (
-    <div className="min-h-screen bg-white relative pb-24">
+    <div className="min-h-screen bg-white relative ">
       <Navbar />
       <div className="p-4">
         {/* Header */}
