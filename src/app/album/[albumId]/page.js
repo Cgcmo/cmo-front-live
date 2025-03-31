@@ -18,11 +18,11 @@ export default function AlbumViewer() {
   useEffect(() => {
     const fetchPhotos = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/photos/${albumId}`);
+        const res = await fetch(`https://cmo-back-live.onrender.com/photos/${albumId}`);
         const photoData = await res.json();
         setPhotos(photoData);
 
-        const albumRes = await fetch("http://localhost:5000/albums");
+        const albumRes = await fetch("https://cmo-back-live.onrender.com/albums");
         const albumList = await albumRes.json();
         const album = albumList.find((a) => a._id === albumId);
         if (album) setAlbumName(album.name);
