@@ -9,7 +9,7 @@ export default function DepartmentsTab() {
   const [editedName, setEditedName] = useState(""); // Store the edited name
 
   useEffect(() => {
-    fetch("http://localhost:5000/departments")
+    fetch("https://cmo-back-live.onrender.com/departments")
       .then((res) => res.json())
       .then((data) => setDepartments(data));
   }, []);
@@ -17,7 +17,7 @@ export default function DepartmentsTab() {
   // Function to handle adding a department
   const handleAddDepartment = () => {
     if (departmentName.trim() !== "") {
-      fetch("http://localhost:5000/departments", {
+      fetch("https://cmo-back-live.onrender.com/departments", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: departmentName })
@@ -36,7 +36,7 @@ export default function DepartmentsTab() {
   // Function to save the edited department name
   const handleSaveEdit = (index) => {
     if (editedName.trim() !== "") {
-      fetch(`http://localhost:5000/departments/${departments[index].name}`, {
+      fetch(`https://cmo-back-live.onrender.com/departments/${departments[index].name}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: editedName })
@@ -50,7 +50,7 @@ export default function DepartmentsTab() {
   };
 
   const handleDelete = (name) => {
-    fetch(`http://localhost:5000/departments/${name}`, { method: "DELETE" })
+    fetch(`https://cmo-back-live.onrender.com/departments/${name}`, { method: "DELETE" })
       .then(() => setDepartments(departments.filter(d => d.name !== name)));
   };
 
