@@ -69,9 +69,9 @@ function App() {
   const fetchAllStats = async () => {
     try {
       const [userRes, albumRes, photoRes, downloadRes] = await Promise.all([
-        axios.get("http://127.0.0.1:5000/count-users"),
-        axios.get("http://127.0.0.1:5000/count-albums"),
-        axios.get("http://127.0.0.1:5000/count-photos"),
+        axios.get("https://cmo-back-live.onrender.com/count-users"),
+        axios.get("https://cmo-back-live.onrender.com/count-albums"),
+        axios.get("https://cmo-back-live.onrender.com/count-photos"),
         axios.get("https://cmo-back-live.onrender.com/get-download-count"),
       ]);
   
