@@ -1,4 +1,4 @@
-// app/search-results/page.jsx
+// src/app/search-results/page.jsx
 import { Suspense } from "react";
 import Navbar from "../dashboard/components/Navbar";
 import Footer from "../dashboard/components/Footer";
