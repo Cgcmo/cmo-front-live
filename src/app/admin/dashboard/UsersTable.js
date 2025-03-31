@@ -189,7 +189,7 @@ export default function UsersTable({fetchAllStats}) {
 
   const toggleStatus = async (id, currentStatus) => {
     try {
-      const response = await fetch(`http://localhost:5000/update-user/${id}`, {
+      const response = await fetch(`https://cmo-back-live.onrender.com/update-user/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: !currentStatus }),
@@ -244,7 +244,7 @@ export default function UsersTable({fetchAllStats}) {
   // Fetch Users from Backend
   const fetchUsers = async () => {
     try {
-      const response = await fetch("http://localhost:5000/users");
+      const response = await fetch("https://cmo-back-live.onrender.com/users");
       const data = await response.json();
       setUsers(data);
     } catch (error) {
@@ -311,7 +311,7 @@ export default function UsersTable({fetchAllStats}) {
     }
   }
     try {
-      const response = await fetch(`http://localhost:5000/update-user/${editedUser._id}`, {
+      const response = await fetch(`https://cmo-back-live.onrender.com/update-user/${editedUser._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(editedUser),
@@ -359,7 +359,7 @@ export default function UsersTable({fetchAllStats}) {
       return;
     }
     try {
-      const response = await fetch("http://localhost:5000/add-staff", {
+      const response = await fetch("https://cmo-back-live.onrender.com/add-staff", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newStaff),
