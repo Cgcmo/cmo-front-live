@@ -26,7 +26,7 @@ export default function Profile() {
     // Fetch user details
     const fetchUserDetails = async () => {
       try {
-        const response = await fetch("http://localhost:5000/users");
+        const response = await fetch("https://cmo-back-live.onrender.com/users");
         const users = await response.json();
         const loggedUser = users.find((u) => u._id === userId);
 
@@ -47,7 +47,7 @@ export default function Profile() {
     // Fetch list of districts
     const fetchDistricts = async () => {
       try {
-        const response = await fetch("http://localhost:5000/districts");
+        const response = await fetch("https://cmo-back-live.onrender.com/districts");
         const data = await response.json();
         setDistricts(data);
       } catch (error) {
@@ -64,7 +64,7 @@ export default function Profile() {
     if (!userId) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/update-user/${userId}`, {
+      const response = await fetch(`https://cmo-back-live.onrender.com/update-user/${userId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user),
