@@ -33,7 +33,7 @@ export default function AuthPage() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/record-visit", {
+    fetch("https://cmo-back-live.onrender.com/record-visit", {
       method: "POST"
     }).catch((err) => console.error("Failed to record visit:", err));
   }, []);
