@@ -1,8 +1,8 @@
 "use client";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import Navbar from "../dashboard/components/Navbar";
-import Footer from "../dashboard/components/Footer";
+import Navbar from "@/app/dashboard/components/Navbar";
+import Footer from "@/app/dashboard/components/Footer";
 import { FiDownload } from "react-icons/fi";
 
 export default function SearchResults() {
