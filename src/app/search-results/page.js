@@ -11,7 +11,7 @@ const SearchResultsComponent = dynamic(() => import("@/components/SearchResultsC
 
 export default function SearchResults() {
   return (
-    <div className="min-h-screen bg-white relative pb-24">
+    <div className="min-h-screen bg-white relative ">
    
       <Suspense fallback={<p className="text-center mt-10">Loading search results...</p>}>
         <SearchResultsComponent />
